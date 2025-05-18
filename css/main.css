@@ -174,6 +174,134 @@ header{
   line-height: 30px;
 }
 
+/* tour pages ---------------------------------------------------------------------------------------- */
+
+
+
+header.hidden { 
+  height: 0px;
+}
+
+.tour_packages{
+  display: none;
+}
+
+.tour_packages.hidden{
+   display: block;
+   padding-top: 250px;
+}
+
+.tour_packages h1{
+  font-size: 32px;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.historical .visited{
+  margin-top: 0px;
+}
+
+.historical .visit{
+  margin-bottom: 25px;
+}
+
+.abouts .more{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-orange-02);
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+
+nav.hidden{
+  background-color: white;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+nav.hidden .links li{
+  color: #333333;
+}
+
+nav.hidden select{
+  color: #333;
+}
+
+
+.second_classes h1{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.lives{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+.lives .live{
+  width: 380px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  transition: all .3s ease;
+}
+
+.live:hover{
+  box-shadow: 0px 0px 10px 3px rgba(128, 128, 128, 0.53);
+  backdrop-filter: blur(2px);
+}
+
+.live .surat{
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+
+.surat img{
+  width: 100%;
+  height: 100%;
+}
+
+.live .hours{
+  padding: 0px 10px;
+}
+
+.live .hours h2{
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  padding: 20px 0px;
+}
+
+.hours p{
+  font-size: 18px;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 10px;
+  height: 43px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hours h3{
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-orange-02);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
 /* ------------------------------------------------------------------------------------------------------- */
 
 nav {
@@ -198,19 +326,64 @@ nav .logo img {
   width: 113px;
   height: 110px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 nav .links {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 3px;
 }
 
 .links li {
+  width: 170px;
   font-size: 20px;
   font-weight: 600;
   color: var(--color-white-f);
   cursor: pointer;
+  position: relative;
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 8;
+}
+
+.links li::after{
+   position: absolute;
+   content: "";
+   top: 0px;
+   left: 0px;
+   width: 0;
+   height: 45px;
+   transform: skewX(-65deg) translateX(-85px);
+   background-color: #fefae0;
+   transition: all .3s ease;
+   z-index: -1;
+}
+
+.links li:hover::after{
+  width: 100%;
+}
+
+.links li:hover{
+  color: #333;
+}
+
+.links li::before{
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  right: 0px;
+  width: 0;
+  height: 45px;
+  background-color: #fffcf4;
+  transition: all .3s ease;
+  z-index: -1 ;
+}
+
+.links li:hover::before{
+  width: 100%;
 }
 
 .users {
@@ -239,6 +412,7 @@ nav .links {
   font-weight: 600;
   cursor: pointer;
 }
+
 
 .hero .container {
   padding-top: 200px;
